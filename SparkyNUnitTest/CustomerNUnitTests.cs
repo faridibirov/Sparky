@@ -19,8 +19,8 @@ public class CustomerNUnitTests
     [Test]
     public void CombineName_InputFirstAndLastName_ReturnFullName()
     {
-        
-      
+
+
 
         //Arrange
 
@@ -56,5 +56,51 @@ public class CustomerNUnitTests
     {
         int result = customer.Discount;
         Assert.That(result, Is.InRange(10, 25));
+    }
+
+    [Test]
+    public void GreetMessage_GreetedWithoutLastName_ReturnsNotNull()
+    {
+        customer.GreetAndCombineNames("ben", "");
+
+        ClassicAssert.IsNotNull(customer.GreetMessage);
+
+        ClassicAssert.IsFalse(string.IsNullOrEmpty(customer.GreetMessage));
+
+    }
+
+    [Test]
+    public void GreetChecker_EmptyFirstName_ThrowsException()
+    {
+        var exceptionDetails = Assert.Throws<ArgumentException>(() => customer.GreetAndCombineNames("", "Spark"));
+
+        ClassicAssert.AreEqual("Empty First Name", exceptionDetails.Message);
+
+        Assert.That(()=>customer.GreetAndCombineNames("", "Spark"), Throws.ArgumentException.With.Message.EqualTo("Empty First Name"));
+
+
+        Assert.Throws<ArgumentException>(() => customer.GreetAndCombineNames("", "Spark"));
+
+
+        Assert.That(() => customer.GreetAndCombineNames("", "Spark"), Throws.ArgumentException);
+    }
+
+    [Test]
+    public void CustomerType_CreateCustomerWithLessThan100Order_ReturnBasicCustomer()
+    {
+        customer.OrderTotal = 10;
+       var result = customer.GetCustomerDetails();
+
+        Assert.That(result, Is.TypeOf<BasicCustomer>());
+    }
+
+
+    [Test]
+    public void CustomerType_CreateCustomerWithMoreThan100Order_ReturnPlatinumCustomer()
+    {
+        customer.OrderTotal = 101;
+        var result = customer.GetCustomerDetails();
+
+        Assert.That(result, Is.TypeOf<PlatinumCustomer>());
     }
 }
