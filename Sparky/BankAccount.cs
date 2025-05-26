@@ -16,6 +16,9 @@ public class BankAccount
     public bool Deposit(int amount)
     {
         _logBook.Message("Depoist invoked");
+        _logBook.Message("Test");
+        _logBook.LogSeverity = 101;
+        var temp = _logBook.LogSeverity;
         balance += amount;
         return true;
     }
