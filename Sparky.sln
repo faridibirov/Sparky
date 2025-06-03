@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.Web", "BongoWeb\Bongo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.Models.Tests", "BongoWeb\Bongo.Models.Tests\Bongo.Models.Tests.csproj", "{FDEDFBC8-ED35-4C31-9C3F-54C0675F374B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.DataAccess.Tests", "BongoWeb\Bongo.DataAccess.Tests\Bongo.DataAccess.Tests.csproj", "{380FD5A7-C050-4529-9E19-B2BAFC666C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.Core.Tests", "BongoWeb\Bongo.Core.Tests\Bongo.Core.Tests.csproj", "{962E80D0-D095-4B1F-A246-551B081C1CAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,14 @@ Global
 		{FDEDFBC8-ED35-4C31-9C3F-54C0675F374B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDEDFBC8-ED35-4C31-9C3F-54C0675F374B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDEDFBC8-ED35-4C31-9C3F-54C0675F374B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{380FD5A7-C050-4529-9E19-B2BAFC666C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380FD5A7-C050-4529-9E19-B2BAFC666C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380FD5A7-C050-4529-9E19-B2BAFC666C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380FD5A7-C050-4529-9E19-B2BAFC666C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962E80D0-D095-4B1F-A246-551B081C1CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962E80D0-D095-4B1F-A246-551B081C1CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962E80D0-D095-4B1F-A246-551B081C1CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962E80D0-D095-4B1F-A246-551B081C1CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +93,8 @@ Global
 		{14A31369-658B-40E0-ADF5-1953618AECD2} = {D97C3049-2045-4E56-AE42-F84BCB715462}
 		{5E728D8B-33FA-4F6F-A399-0602FF6DC5EA} = {D97C3049-2045-4E56-AE42-F84BCB715462}
 		{FDEDFBC8-ED35-4C31-9C3F-54C0675F374B} = {D97C3049-2045-4E56-AE42-F84BCB715462}
+		{380FD5A7-C050-4529-9E19-B2BAFC666C7A} = {D97C3049-2045-4E56-AE42-F84BCB715462}
+		{962E80D0-D095-4B1F-A246-551B081C1CAE} = {D97C3049-2045-4E56-AE42-F84BCB715462}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98974DDA-EF35-4731-8C29-B4BD7194A94D}
