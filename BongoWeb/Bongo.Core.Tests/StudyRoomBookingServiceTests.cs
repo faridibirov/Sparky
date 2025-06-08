@@ -113,4 +113,38 @@ public class StudyRoomBookingServiceTests
         return _bookingService.BookStudyRoom(_request).Code;
 
     }
+
+
+    [TestCase(0, false)]
+    [TestCase(55, true)]
+    public void StudyRoomBooking_BookRoomWithAvailability_ReturnsBookingId( int expectedBookingId, bool roomAvailability)
+    {
+        if(!roomAvailability)
+        {
+            availableStudyRoom.Clear();
+        }
+
+        _studyRoomBookingRepositoryMock.Setup(x => x.Book(It.IsAny<StudyRoomBooking>()))
+            .Callback<StudyRoomBooking>(booking =>
+            {
+                booking.BookingId = 55;
+            });
+
+        var result = _bookingService.BookStudyRoom(_request);
+        ClassicAssert.AreEqual(expectedBookingId, result.BookingId);
+
+    }
+
+
+    [Test]
+    public void BookNotInVoked_SaveBookingWithoutAvailableRoom_BookMethodNotInvoked()
+    {
+       
+            availableStudyRoom.Clear();
+
+
+        var result = _bookingService.BookStudyRoom(_request);
+        _studyRoomBookingRepositoryMock.Verify(x => x.Book(It.IsAny<StudyRoomBooking>()), Times.Never());
+
+    }
 }
